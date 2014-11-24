@@ -1,0 +1,23 @@
+development:
+ adapter: postgresql
+ encoding: unicode
+ database: Tukho_project_development
+ pool: 5
+ username: victor3
+ password: 123456
+
+test:
+ adapter: postgresql
+ encoding: unicode
+ database: Tukho_project_test
+ pool: 5
+ username: victor3
+ password: 123456
+
+production:
+ adapter: postgresql
+ encoding: unicode
+ database: Tukho_project_production
+ pool: 5
+ username: victor3
+ password: 123456
