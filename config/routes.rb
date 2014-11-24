@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
    get '/' => 'user#home'
    get '/users' => 'user#index'
-   get '/new' => 'user#new'
+   get '/users/new' => 'user#new'
 
    # post 'users' => 'user#create'
   #  resources :users do

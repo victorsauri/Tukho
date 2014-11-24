@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :connectors
+	has_and_belongs_to_many :events
 
 	validates :name, presence: true, uniqueness: true, format: {with: /\A[\w\s*]+\Z/}
 	validates :description, presence: true
