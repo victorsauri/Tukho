@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
    get '/' => 'user#home'
+   get '/users' => 'user#index'
+   get '/new' => 'user#new'
+
+   # post 'users' => 'user#create'
+  #  resources :users do
+  #   resources :connectors
+  # end
+  #  namespace :api do
+  #   resources :projects, only: [:show, :index, :create]
+  # end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
