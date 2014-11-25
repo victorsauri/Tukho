@@ -1,23 +1,5 @@
-<div>
-	<%= form_for [@user] do |f| %>
-		<%= f.text_field :name, :autofocus => true, :placeholder => "Add your name"%><br />
-		<%= f.text_field :description, :autofocus => true, :placeholder => "Write your quote" %><br />
-		<%= f.text_field :color, :autofocus => true, :placeholder => "Choose your status" %><br />
-		<%= f.label "Set your privacy" %><br />
-		<%= f.radio_button :privacy, 'true' %> Private
-		<%= f.radio_button :privacy, 'false' %> Public<br />
- 		<%= f.submit 'Submit'%>
-	<% end %>
-	<%= link_to("Index", user_index_path(@user)) %>
-</div>
+<h2>Create a new user now</h2>
 
-<div>
-	<% if @user.errors.any? %>
-	<h3>This is your list of errors</h3>
-		<ul>
-			<% @user.errors.full_messages.each do |error_msg| %>
-				<li><%= error_msg %></li>
-			<% end %>
-		</ul>
-	<% end %>
-</div>
+<%= render 'form' %>
+
+
