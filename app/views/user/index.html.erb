@@ -3,6 +3,6 @@
      <% @user.each do |u| %>
        <li><%= u.name %> - <%= u.description %></li>
      <% end %>
-   </ul>
-   <%= link_to("New user", users_new_path(@user)) %>
+  </ul>
+  <%= link_to("New user", new_user_path(@user)) %>
 </div>
