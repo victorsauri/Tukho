@@ -10,10 +10,6 @@ end
 	event = Event.create(name: Faker::Name.name, description: Faker::Lorem.sentence, date: Faker::Date.forward(20),
 	photo: Faker::Avatar.image, location: Faker::Address.street_address, starting_time: Faker::Time.between(1.days.ago, Time.now, :evening), 
 	starting_time: Faker::Time.between(1.days.ago, Time.now, :midnight), num_people: Faker::Number.number(100))
-
-	Event.create(name: Faker::Name.name, description: Faker::Lorem.sentence, date: Faker::Date.forward(20),
-	photo: Faker::Avatar.image, location: Faker::Address.street_address, starting_time: Faker::Time.between(1.days.ago, Time.now, :evening), 
-	starting_time: Faker::Time.between(1.days.ago, Time.now, :midnight), num_people: Faker::Number.number(100))
 end
 
 100.times do
