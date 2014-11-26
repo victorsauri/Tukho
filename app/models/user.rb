@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
 	# validates :photo, presence: true
 	validates_inclusion_of :privacy, :in => [true, false]
 
-def get_random_users
-  	find(:all).sample
-end
+# def get_random_users
+#   	find(:all).sample
+# end
 
 
 end

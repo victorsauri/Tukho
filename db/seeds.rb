@@ -3,8 +3,7 @@ require 'faker'
 color_arr = ['green', 'blue', 'red']
 
 20.times do
-	User.create(name: Faker::Name.name, description: Faker::Lorem.sentence, 
-		color: Faker::Commerce.color, photo: Faker::Avatar.image, privacy: false)
+	User.create(name: Faker::Name.name, description: Faker::Lorem.sentence, photo: Faker::Avatar.image, privacy: false)
 end
 
 20.times do
@@ -15,9 +14,6 @@ end
 	Event.create(name: Faker::Name.name, description: Faker::Lorem.sentence, date: Faker::Date.forward(20),
 	photo: Faker::Avatar.image, location: Faker::Address.street_address, starting_time: Faker::Time.between(1.days.ago, Time.now, :evening), 
 	starting_time: Faker::Time.between(1.days.ago, Time.now, :midnight), num_people: Faker::Number.number(100))
-
-	offset = rand(User.count)
-	event.users << User.offset(offset).first
 end
 
 100.times do
