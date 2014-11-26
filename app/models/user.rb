@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-	has_and_belongs_to_many :events
+	has_many :associations
+  has_many :events, through: :associations
 
 	validates :name, presence: true, format: {with: /\A[\w\s*]+\Z/}
 	validates :description, presence: true, format: {with: /\A[\w\s*]+\Z/}

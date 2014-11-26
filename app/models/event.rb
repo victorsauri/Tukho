@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
-	has_and_belongs_to_many :users
+	has_many :associations
+  has_many :users, through: :associations
 
 	validates :name, presence: true, uniqueness: true, format: {with: /\A[\w\s*]+\Z/}
 	validates :description, presence: true
