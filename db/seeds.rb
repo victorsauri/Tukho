@@ -21,7 +21,9 @@ end
 end
 
 100.times do
-	Connector.create(user_id: User.get_random_user.id, event_id: Event.get_random_event.id, color: color_arr.sample)
+	rand_user = rand(0..User.all.count)
+	rand_event = rand(0..Event.all.count)
+	Connector.create(user_id: rand_user, event_id: rand_event, color: color_arr.sample)
 end
 
 
