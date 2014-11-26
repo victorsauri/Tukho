@@ -5,12 +5,12 @@ Rails.application.routes.draw do
    # get '/users/new' => 'user#new'
    # post '/users/:id' => 'user#show'
 
-  root 'user#home'
-  resources :user do
-    resources :event
+  root 'users#home'
+  resources :users do
+    resources :events
   end
 
-  post 'users' => 'user#create'
+  
   #  resources :users do
   #   resources :connectors
   # end
