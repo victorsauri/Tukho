@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
-	has_many :associations
-  has_many :users, through: :associations
+	has_many :connectors
+  has_many :users, through: :connectors
 
 	validates :name, presence: true, uniqueness: true, format: {with: /\A[\w\s*]+\Z/}
 	validates :description, presence: true
