@@ -4,7 +4,13 @@ class User < ActiveRecord::Base
 
 	validates :name, presence: true, format: {with: /\A[\w\s*]+\Z/}
 	validates :description, presence: true, format: {with: /\A[\w\s*]+\Z/}
-	validates :color, presence: true
+	# validates :color, presence: true
 	# validates :photo, presence: true
 	validates_inclusion_of :privacy, :in => [true, false]
+
+def get_random_users
+  	find(:all).sample
+end
+
+
 end

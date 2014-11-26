@@ -59,8 +59,4 @@ class UsersController < ApplicationController
 	def user_params
    	params.require(:user).permit(:name, :description, :color, :privacy)
   end
-
-	# def get_random_users_for_seed
- #  	find(:all).sample(5)
-	# end
 end
