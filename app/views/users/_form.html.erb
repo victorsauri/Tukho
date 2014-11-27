@@ -2,7 +2,9 @@
 	<%= form_for [@user] do |f| %>
 		<%= f.text_field :name, :autofocus => true, :placeholder => "Add your name"%><br />
 		<%= f.text_field :description, :autofocus => true, :placeholder => "Write your quote" %><br />
-		<%= f.text_field :color, :autofocus => true, :placeholder => "Choose your status" %><br />
+		<%= fields_for @connector do |u| %>
+		<%= u.text_field :color, :autofocus => true, :placeholder => "Choose your status" %><br />
+		<% end %>
 		<%= f.label "Set your privacy" %><br />
 		<%= f.radio_button :privacy, 'true' %> Private
 		<%= f.radio_button :privacy, 'false' %> Public<br />

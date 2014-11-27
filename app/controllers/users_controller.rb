@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	helper_method :user_params
+	helper_method :connector_params
 
 	def home
 	end
@@ -9,6 +11,7 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
+		@connector = Connector.new
 	end
 
 	def show
@@ -21,7 +24,8 @@ class UsersController < ApplicationController
 		@user = User.find_by(id: params[:user][:id])
     unless @user
 	    @user = User.new(name: params[:user][:name], description: params[:user][:description],
-	    color: params[:user][:color], privacy: params[:user][:privacy])
+	    privacy: params[:user][:privacy])
+	    @connector = Connector.new(color: params[:connector][:color])
 	    if @user.save
 	    	redirect_to users_path
 	    else
@@ -32,10 +36,12 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find params[:id]
+		@connector = Connector.new(color: params[:color])
 	end
 
 	def update
 		@user = User.find params[:id]
+		@connector = Connector.where(user_id: @user.id)
 
 		if @user.update_attributes user_params
 	      redirect_to action: :show, controller: 'users', user_id: @user.id
@@ -57,6 +63,9 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-   	params.require(:user).permit(:name, :description, :color, :privacy)
+   	params.require(:user).permit(:name, :description, :privacy)
+  end
+  def connector_params
+   	params.require(:connector).permit(:color, :user_id, :event_id)
   end
 end
