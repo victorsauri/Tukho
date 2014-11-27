@@ -1,5 +1,6 @@
 <div class="background">
 	<div class = "container">
+	</br>
 		<ul>
 	     <% @users.each do |u| %>
 	       <li class="list-group-item list-group-item-danger"><%= u.name %> - <%= u.description %>
@@ -7,6 +8,5 @@
 			   <%= link_to("Delete user", user_path(u.id), method: :delete, data: { confirm: 'Are you sure?'}) %></li>
 	     <% end %>
 	  </ul>
-	  <%= link_to("New user", new_user_path) %>
-	</div>
+	 </div>
 </div>

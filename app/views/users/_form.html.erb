@@ -4,14 +4,14 @@
 			<%= form_for [@user] do |f| %>
 			<p class="input-group-lg">
 				<span class="input-group-addon">
-				<%= f.text_field :name, :autofocus => true, :placeholder => "Add your name"%><p/></span>
+				<%= f.text_field :name, :autofocus => true, :autocomplete => :off, :placeholder => "Add your name"%><p/></span>
 			<p class="input-group-lg">
 				<span class="input-group-addon">
-				<%= f.text_field :description, :autofocus => true, :placeholder => "Write your quote" %><p/></span>
+				<%= f.text_field :description, :autocomplete => :off, :autofocus => true, :placeholder => "Write your quote" %><p/></span>
 			<p class="input-group-lg">
 				<span class="input-group-addon">
 				<%= fields_for @connector do |u| %>
-				<%= u.text_field :color, :autofocus => true, :placeholder => "Choose your status" %><p/></span>
+				<%= u.text_field :color, :autocomplete => :off, :autofocus => true, :placeholder => "Choose your status" %><p/></span>
 				<% end %>
 			<p class="input-group-lg">
 				<%= f.label "Set your privacy" %><br/>
@@ -19,9 +19,8 @@
 				<%= f.radio_button :privacy, 'true' %> Private
 				<%= f.radio_button :privacy, 'false' %> Public
 				</span><p/>
-		 		<%= f.submit 'Submit', class: 'btn btn-primary' %>
+		 		<%= f.submit 'Submit', class: 'btn btn-warning' %>
 			<% end %>
-			<%= link_to("Index", users_path) %>
 		</div>
 	</div>
 </div>
