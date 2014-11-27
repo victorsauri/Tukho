@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	helper_method :user_params
 	helper_method :connector_params
-
+	# helper_method :connector
 	def home
 	end
 
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find params[:id]
-		@connector = Connector.where(user_id: @user.id)
+		@connector = Connector.new(color: params[:color])
 
 		if @user.update_attributes user_params
 	      redirect_to action: :show, controller: 'users', user_id: @user.id
@@ -68,4 +68,8 @@ class UsersController < ApplicationController
   def connector_params
    	params.require(:connector).permit(:color, :user_id, :event_id)
   end
+
+  # def connector
+  #   	@connector ||= connectors.find params[:connector_id]
+  # end
 end
