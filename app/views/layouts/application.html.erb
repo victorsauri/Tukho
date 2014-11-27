@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class ="container">
 	<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
 		<ul class="nav nav-pills">
 		  <li role="presentation" class="active"><%= link_to("Home", root_path)%></li>
@@ -14,8 +15,9 @@
 		  <li role="presentation"><a href="#">Events</a></li>
 		</ul>
 	</nav>
-
+ </div>
 <%= yield %>
 
 </body>
 </html>
+

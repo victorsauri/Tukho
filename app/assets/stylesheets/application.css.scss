@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require boots_theme
  */
 
 .background {
@@ -24,3 +25,23 @@
 a {
 	height: 50px;
 }
+
+#user_name, #user_description, #connector_color {
+	width: 300px;
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid;
+}
+
+.input-group-addon {
+	border-radius: 30px;
+	border: 1px solid;
+}
+
+.input-group-addon:last-child {
+	border-radius: 10px;
+	border: 1px solid;
+}
+
+
+
