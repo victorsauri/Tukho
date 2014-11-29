@@ -4,8 +4,8 @@
 		<ul>
 	     <% @users.each do |u| %>
 	       <li class="list-group-item list-group-item-danger"><%= u.name %> - <%= u.description %>
-	       <%= link_to("Edit user", edit_user_path(u.id)) %> -
-			   <%= link_to("Delete user", user_path(u.id), method: :delete, data: { confirm: 'Are you sure?'}) %></li>
+	       <%= link_to("Update", edit_user_path(u.id)) %> -
+			   <%= link_to("Remove", user_path(u.id), method: :delete, data: { confirm: 'Are you sure?'}) %></li>
 	     <% end %>
 	  </ul>
 	 </div>

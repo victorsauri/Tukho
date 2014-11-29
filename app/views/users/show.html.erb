@@ -5,7 +5,7 @@
     <h3>Your name: <%= @user.name %></h3>
     <h3>Your quote: <%= @user.description %></h3>
     <%= link_to("Index", users_path) %>
-    <%= link_to("Edit user", edit_user_path(@user.id)) %>
-    <%= link_to("Delete user", user_path, method: :delete, data: { confirm: 'Are you sure?'}) %>
+    <%= link_to("Update", edit_user_path(@user.id)) %>
+    <%= link_to("Remove", user_path, method: :delete, data: { confirm: 'Are you sure?'}) %>
   </article>
 </div>

@@ -23,15 +23,14 @@
 			<% end %>
 		</div>
 	</div>
-</div>
-
-<div>
-	<% if @user.errors.any? %>
-	<h3>This is your list of errors</h3>
-		<ul>
-			<% @user.errors.full_messages.each do |error_msg| %>
-				<li><%= error_msg %></li>
-			<% end %>
-		</ul>
-	<% end %>
+	<span class="errors">
+		<% if @user.errors.any? %>
+		<h3>This is your list of errors</h3>
+			<ul>
+				<% @user.errors.full_messages.each do |error_msg| %>
+					<li><%= error_msg %></li>
+				<% end %>
+			</ul>
+		<% end %>
+	</span>
 </div>
