@@ -1,0 +1,11 @@
+<div class="background">
+	<div class = "container">
+	</br>
+		<ul>
+	     <% @event.each do |u| %>
+	       <li class="list-group-item list-group-item-danger"><%= u.name %> - <%= u.description %> - <%= u.date %> - <%= u.location %> - <%= u.starting_time %> - <%= u.finishing_time %>
+	       </li>
+	     <% end %>
+	  </ul>
+	 </div>
+</div>
