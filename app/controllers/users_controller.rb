@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 	# helper_method :connector
 	def home
 	end
-
 	def index
 		@users = User.order(created_at: :desc).limit(11)
 	end
