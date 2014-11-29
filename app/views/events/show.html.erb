@@ -2,7 +2,7 @@
   <article>
     <h1>Event's Preview</h1>
     <h3>Name of the event: <%= @event.name %></h3>
-    <h3>Context <%= @event.description %></h3>
+    <h3>Context <%= @event.name %></h3>
     <h3>Date: <%= @event.date.strftime("#{u.date.day.ordinalize} %B %Y") %></h3>
     <h3>Starting time: <%= @event.starting_time.strftime(" Start: %H:%M") %></h3>
     <h3>Finishing time: <%= @event.finishing_time.strftime(" Finish: %H:%M") %></h3>
