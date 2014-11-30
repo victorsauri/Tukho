@@ -11,7 +11,7 @@
 			<p class="input-group-lg">
 				<span class="input-group-addon">
 				<%= fields_for @connector do |u| %>
-				<%= u.text_field :color, :autocomplete => :off, :autofocus => true, :placeholder => "Choose your status" %><p/></span>
+				<%= u.select :color,  ['Green', 'Orange', 'Red'], prompt: "Choose your status", :autocomplete => :off  %><p/></span>
 				<% end %>
 			<p class="input-group-lg">
 				<%= f.label "Set your privacy" %><br/>

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 	helper_method :user_params
 	helper_method :connector_params
-	# helper_method :connector
 	def home
 	end
 	def index
