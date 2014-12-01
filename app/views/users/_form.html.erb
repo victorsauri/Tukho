@@ -2,29 +2,24 @@
 	<div class = "row">
 		 <div class="col-lg-6">
 			<%= form_for [@user] do |f| %>
-			<p class="input-group-lg">
-				<span class="input-group-addon">
-				<%= f.text_field :name, :autofocus => true, :autocomplete => :off, :placeholder => "Add your name"%><p/></span>
-			<p class="input-group-lg">
-				<span class="input-group-addon">
-				<%= f.text_field :description, :autocomplete => :off, :autofocus => true, :placeholder => "Write your quote" %><p/></span>
 				<p class="input-group-lg">
-				<span class="input-group-addon">
-				<%= f.text_field :email, :autocomplete => :off, :autofocus => true, :placeholder => "Include your email" %><p/></span>
+					<span class="input-group-addon">
+						<%= f.text_field :name, :autofocus => true, :autocomplete => :off, :placeholder => "Add your name"%><p/></span>
 				<p class="input-group-lg">
-				<span class="input-group-addon">
-				<%= f.text_field :password, :autocomplete => :off, :autofocus => true, :placeholder => "Set your password" %><p/></span>
-			<p class="input-group-lg">
-				<span class="input-group-addon">
-				<%= fields_for @connector do |u| %>
-				<%= u.select :color,  ['Green', 'Orange', 'Red'], prompt: "Choose your status", :autocomplete => :off  %><p/></span>
-				<% end %>
-			<p class="input-group-lg">
-				<%= f.label "Set your privacy" %><br/>
-				<span class="input-group-addon">
-				<%= f.radio_button :privacy, 'true' %> Private
-				<%= f.radio_button :privacy, 'false' %> Public
-				</span><p/>
+					<span class="input-group-addon">
+						<%= f.text_field :description, :autocomplete => :off, :autofocus => true, :placeholder => "Write your quote" %><p/></span>
+				<p class="input-group-lg">
+					<span class="input-group-addon">
+						<%= f.text_field :email, :autocomplete => :off, :autofocus => true, :placeholder => "Include your email" %><p/></span>
+				<p class="input-group-lg">
+					<span class="input-group-addon">
+						<%= f.text_field :password, :autocomplete => :off, :autofocus => true, :placeholder => "Set your password" %><p/></span>
+				<p class="input-group-lg">
+					<%= f.label "Set your privacy" %><br/>
+					<span class="input-group-addon">
+					<%= f.radio_button :privacy, 'true' %> Private
+					<%= f.radio_button :privacy, 'false' %> Public
+					</span><p/>
 		 		<%= f.submit 'Submit', class: 'btn btn-warning' %>
 			<% end %>
 		</div>
@@ -40,3 +35,4 @@
 		<% end %>
 	</span>
 </div>
+

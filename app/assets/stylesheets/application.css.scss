@@ -26,12 +26,13 @@ a {
 	height: 50px;
 }
 
-#user_name, #user_description, #connector_color {
+#user_name, #user_description, #user_email, #user_password {
 	width: 450px;
 	border-radius: 10px;
 	padding: 10px;
 	background:transparent;
 	color: rgb(230, 111, 0);
+	height:50px;
 }
 
 .input-group-addon {
@@ -103,12 +104,11 @@ a:hover {
 }
 
 .traffic {
-/* vertical-align: middle; */
-width: 117px;
-float: right;
-margin-right: 7%;
-postion: absolute;
-border-radius: 10px;
+	width: 117px;
+	float: right;
+	margin-right: 7%;
+	position: absolute;
+	border-radius: 10px;
 }
 
 .bg {
