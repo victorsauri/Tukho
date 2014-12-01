@@ -7,6 +7,8 @@ class EventsController < ApplicationController
 	end
 	def show
 	 @event = Event.find event_params
+
+	 # Event.users << User.find params[:id]
 	end
 
 	private
