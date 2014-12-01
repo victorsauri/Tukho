@@ -6,7 +6,7 @@ Rails.application.routes.draw do
    # post '/users/:id' => 'user#show'
 
   root 'users#home'
-  get '/sessions' => 'sessions#new'
+  # get '/sessions' => 'sessions#new'
   get '/events' => 'events#index'
   resources :users
   resources :events
