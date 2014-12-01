@@ -7,5 +7,9 @@
     <h3><%= @event.starting_time.strftime(" Start: %H:%M") %></h3>
     <h3><%= @event.finishing_time.strftime(" Finish: %H:%M") %></h3>
     <%= link_to("Index", events_path) %>
+    <%= link_to("Green", events_path(color: "green")) %>
+    <%= link_to("Blue", events_path(color: "blue")) %>
+    <%= link_to("Red", events_path(color: "red")) %>
+
    </article>
-</div>
+</div>	

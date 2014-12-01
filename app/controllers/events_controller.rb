@@ -16,6 +16,7 @@ class EventsController < ApplicationController
 	def choose_color
 		@connector = current_user.connectors.where(event_id:params[:event_id])
 		@connector.update(color: params[:color])
+		@connector.save
 		redirect_to :back
 	end
 
