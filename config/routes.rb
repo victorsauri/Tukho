@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
-   get '/' => 'user#home'
-   get '/users' => 'user#index'
-   get '/users/new' => 'user#new'
+   # get '/' => 'user#home'
+   # get '/users' => 'user#index'
+   # get '/users/new' => 'user#new'
+   # post '/users/:id' => 'user#show'
 
-   # post 'users' => 'user#create'
+  root 'users#home'
+  get '/events' => 'events#index'
+  resources :users
+  resources :events
+  
+
+  
   #  resources :users do
   #   resources :connectors
   # end

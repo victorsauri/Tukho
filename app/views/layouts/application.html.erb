@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	<div class ="container">
+	<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+		<ul class="nav nav-pills">
+		  <li role="presentation" class="active"><%= link_to("Home", root_path)%></li>
+		  <li role="presentation"><%= link_to("All Tukhos", users_path)%></li>
+		  <li role="presentation"><%= link_to("Events", events_path) %></li>
+		  <li role="presentation"><%= link_to("New user", new_user_path)%></li>
+		</ul>
+	</nav>
+ </div>
 <%= yield %>
 
 </body>
 </html>
+

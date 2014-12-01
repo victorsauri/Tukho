@@ -1,0 +1,200 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require boots_theme
+ */
+
+.background {
+	 background-image: url("https://dl-web.dropbox.com/get/Public/Manchester_City_Centre.jpg?_subject_uid=89344857&w=AADjstSbqfjZOnha09YbQuKlaTIqnqyXdhp2DkckLxSmPA")no-repeat center center fixed; 
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+a {
+	height: 50px;
+}
+
+#user_name, #user_description, #connector_color {
+	width: 450px;
+	border-radius: 10px;
+	padding: 10px;
+	background:transparent;
+	color: rgb(230, 111, 0);
+}
+
+.input-group-addon {
+	border-radius: 30px;
+	background:transparent;
+	color: rgb(190, 190, 190);
+}
+
+.input-group-addon input[type="radio"], .input-group-addon input[type="checkbox"] {
+	margin-left: 50px;
+}
+
+html {
+	font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+}
+
+.jumbotron {
+	color: white;
+	background-color: #222222;
+	height:500px;
+}
+
+.jumbotron h1, .jumbotron .h1 {
+	font-size: 50px;
+}
+.jumbotron h2 {
+	margin-top:35px;
+}
+
+.nav {
+	padding-left: 35%;
+}
+
+h2, h3 {
+	color: rgb(193, 91, 20);
+}
+
+
+.new_form>h2 {
+margin-top: 155px;
+margin-left: 100px;
+color: #DA8245;
+}
+
+.edit_form>h2 {
+	margin-top: 155px;
+	color: #DA8245;
+	margin-right: 100px;
+}
+
+.container h3 {
+	line-height: 40px;
+	font-size: 20px;
+	padding-top: 20px;
+}
+
+a {
+	color:#587058;
+	font-size: 20px;
+}
+
+a:hover {
+	color:#A7622C;
+	text-decoration: none;
+}
+
+.navbar-brand > img {
+	width: 20px;
+}
+
+.traffic {
+/* vertical-align: middle; */
+width: 117px;
+float: right;
+margin-right: 7%;
+postion: absolute;
+border-radius: 10px;
+}
+
+.bg {
+  background-image: url('images/traffic-light.jpg') no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 350px;
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+
+body {
+	color: #587058;
+	background: url(traffic-light.jpg) no-repeat -120px;
+}
+
+.list-group-item-danger {
+	color: #BFC060;
+	background-color: #07140F;
+	width: 715px;
+	font-size: 17px;
+	margin-top: 8px;
+	border-radius: 5px;
+}
+
+.list-group-item-danger a {
+	font-size: 17px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+	color: white;
+	background-color: #587058;
+}
+
+.nav-tabs a, .nav-pills a, .breadcrumb a, .pager a {
+	color: #587058;
+}
+
+.col-lg-6 {
+	width: 575px;
+}
+
+.input-group-addon:first-child {
+	background: transparent;
+}
+
+.input-group-addon:last-child {
+	border-right: transparent;
+	border-radius: 0px;
+}
+
+input {
+	border: 0px;
+}
+
+label {
+	font-size: 17px;
+	color: rgba(188, 161, 136, 0.81);
+	margin: 10px;
+}
+
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: cell;
+	width: 150px;
+	margin-top: 20px;
+	color: rgb(76, 56, 56);
+	box-shadow: inset 0 0 1em gold, 0 0 1em orange;
+}
+
+.errors {
+	float: right;
+	width: 300px;
+	position: relative;
+	right: 100px;
+	bottom: 100px;
+	color: rgb(184, 185, 200);
+}
+.errors h3 {
+	margin-top: -7px;
+	line-height: 10px;
+	padding-top: 0px;
+}
+
+.list_event {
+	font-size:15px;
+}

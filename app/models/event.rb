@@ -1,21 +1,14 @@
 class Event < ActiveRecord::Base
-	has_and_belongs_to_many :users
+	has_many :connectors
+  has_many :users, through: :connectors
 
-	validates :name, presence: true, uniqueness: true, format: {with: /\A[\w\s*]+\Z/}
-	validates :description, presence: true
+	validates :name, presence: true, format: {with: /\A[\w\s*]+\Z/}
+	validates :description, presence: true, format: {with: /\A[\w\s*]+\Z/}
 	validates :date, presence: true
-	validates :photo, presence: true
+	# validates :photo, presence: true
 	validates :location, presence: true
 	validates :starting_time, presence: true
 	validates :finishing_time, presence: true
-	validates :num_people, presence: true, numericality: true
+	# validates :num_people, presence: true, numericality: true
 end
 
- 	# t.string :name
-  #   	t.text :description
-  #   	t.datetime :date
-  #   	t.string :photo
-  #   	t.string :location
-  #   	t.datetime :starting_time
-  #   	t.datetime :finishing_time
-  #   	t.integer :num_people

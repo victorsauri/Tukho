@@ -3,7 +3,6 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
     	t.string :name
     	t.text :description
-    	t.string :color
     	t.string :photo
     	t.boolean :privacy
       t.timestamps
