@@ -7,14 +7,16 @@ class EventsController < ApplicationController
 	end
 	def show
 	 	@event = Event.find params[:id]
-	 	if User.current_user
-	 		User.current_user << @event
+	 	if current_user
+	 		current_user.events << @event
 	 	end
+
 	end
 
 	def choose_color
-		@connector = Connector.where(user_id: current_user.id, event_id: params[:event_id])
+		@connector = current_user.connectors.where(event_id:params[:event_id])
 		@connector.update(color: params[:color])
+		redirect_to :back
 	end
 
 
