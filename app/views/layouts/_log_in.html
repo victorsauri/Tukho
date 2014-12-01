@@ -1,0 +1,11 @@
+<%= form_for :user, url: sessions_path do |f| %>
+	<p class="form-group">
+	  <%= f.text_field :email, class: 'form-control', :placeholder => "Email" %>
+	</p>
+	<p class="form-group">
+	  <%= f.password_field :password, class: 'form-control',:placeholder => "Password" %>
+	</p>
+	<p class="form-group">
+	  <%= f.submit "Log In", class: 'btn btn-success' %>
+	</p>
+<% end %>

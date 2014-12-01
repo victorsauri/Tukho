@@ -6,13 +6,12 @@ Rails.application.routes.draw do
    # post '/users/:id' => 'user#show'
 
   root 'users#home'
+  get '/sessions' => 'sessions#new'
   get '/events' => 'events#index'
   resources :users
   resources :events
   resources :sessions, only: [:create, :destroy]
-  
 
-  
   #  resources :users do
   #   resources :connectors
   # end

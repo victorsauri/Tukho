@@ -1,4 +1,10 @@
 class SessionsController < ApplicationController
+	
+
+	def new
+		render "log_in"
+
+	end
 	def create
 		if User.find_by(email: params[:user][:email]) &&  User.find_by(email: params[:user][:email]).authenticate(params[:user][:password])
       @user = User.find_by(email: params[:user][:email]).authenticate(params[:user][:password])

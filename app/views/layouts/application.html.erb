@@ -14,7 +14,10 @@
 		  <li role="presentation"><%= link_to("All Tukhos", users_path)%></li>
 		  <li role="presentation"><%= link_to("Events", events_path) %></li>
 		  <li role="presentation"><%= link_to("New user", new_user_path)%></li>
-		</ul>
+			<div class=" navbar-collapse navbar-form navbar-left">
+       <%= render "layouts/log_in" %>
+    	</div>
+    </ul>
 	</nav>
  </div>
 <%= yield %>
