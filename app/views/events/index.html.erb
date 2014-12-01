@@ -3,9 +3,8 @@
 	</br>
 		<ul>
 	     <% @event.each do |u| %>
-	       <li class="list-group-item list-group-item-danger list_event"><%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> - <%= link_to "See this event", event_path(u.id) %>
-	       	<button type="button" class="btn btn-success join">Join</button>
-	       </li>
+	       <li class="list-group-item list-group-item-danger list_event"><%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> - <%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
+	       	</li>
 	     <% end %>
 	  </ul>
 	 </div>

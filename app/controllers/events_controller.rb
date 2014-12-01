@@ -6,8 +6,17 @@ class EventsController < ApplicationController
 		@event = Event.order(created_at: :desc).limit(8)
 	end
 	def show
-	 	@event = Event.find params[:id]	
+	 	@event = Event.find params[:id]
+	 	if User.current_user
+	 		User.current_user << @event
+	 	end
 	end
+
+	def choose_color
+		@connector = Connector.where(user_id: current_user.id, event_id: params[:event_id])
+		@connector.update(color: params[:color])
+	end
+
 
 	private
 	def event_params

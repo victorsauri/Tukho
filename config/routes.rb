@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
 
-   # get '/' => 'user#home'
-   # get '/users' => 'user#index'
-   # get '/users/new' => 'user#new'
-   # post '/users/:id' => 'user#show'
-
   root 'users#home'
-  # get '/sessions' => 'sessions#new'
   get '/events' => 'events#index'
-  # get '/events/id' => 'events#show'
+  get 'event/:event_id/:color' => 'event#choose_color'
   resources :users
   resources :events
   resources :sessions, only: [:create, :destroy]
