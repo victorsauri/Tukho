@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/events' => 'events#index'
   resources :users
   resources :events
+  resources :sessions, only: [:create, :destroy]
   
 
   
