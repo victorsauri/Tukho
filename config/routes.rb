@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'users#home'
   # get '/sessions' => 'sessions#new'
   get '/events' => 'events#index'
+  # get '/events/id' => 'events#show'
   resources :users
   resources :events
   resources :sessions, only: [:create, :destroy]
