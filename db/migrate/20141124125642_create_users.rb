@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration
     	t.string :photo
     	t.boolean :privacy
       t.timestamps
+      t.string :email
+      t.string :password
     end
   end
 end

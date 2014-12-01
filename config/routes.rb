@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'users#home'
   get '/events' => 'events#index'
-  post '/events/:id/:color' => 'event#choose_color'
+  post '/events/:id/:color' => 'events#choose_color'
   resources :users
   resources :events
   resources :sessions, only: [:create, :destroy]
