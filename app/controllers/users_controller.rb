@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 		@user = User.find_by(id: params[:user][:id])
     unless @user
 	    @user = User.new(name: params[:user][:name], description: params[:user][:description],
-	    privacy: params[:user][:privacy])
+	    privacy: params[:user][:privacy], email: params[:user][:email], password: params[:user][:password])
 	    @connector = Connector.new(color: params[:connector][:color])
 	    if @user.save
 	    	redirect_to users_path
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-   	params.require(:user).permit(:name, :description, :privacy)
+   	params.require(:user).permit(:name, :description, :privacy, :email, :password)
   end
   def connector_params
    	params.require(:connector).permit(:color, :user_id, :event_id)

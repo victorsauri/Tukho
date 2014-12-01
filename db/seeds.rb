@@ -7,7 +7,7 @@ color_arr = ['green', 'blue', 'red']
 end
 50.times do
 	require 'faker'
-	User.create(name: Faker::Name.name, description: Faker::Name.title, photo: Faker::Avatar.image, privacy: false)
+	User.create(name: Faker::Name.name, description: Faker::Name.title, photo: Faker::Avatar.image, privacy: false, email:Faker::Internet.email, password: Faker::Internet.password(4))
 	rand_user = rand(0..User.all.count)
 	rand_event = rand(0..Event.all.count)
 	Connector.create(user_id: rand_user, event_id: rand_event, color: color_arr.sample)
