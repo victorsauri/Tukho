@@ -6,9 +6,11 @@
     <h3>Date: <%= @event.date.strftime("#{@event.date.day.ordinalize} %B %Y") %></h3>
     <h3><%= @event.starting_time.strftime(" Start: %H:%M") %></h3>
     <h3><%= @event.finishing_time.strftime(" Finish: %H:%M") %></h3>
-    <%= link_to("Index", events_path) %>
-    <%= link_to("Red", color_path(id: @event.id, color: "red")) %>
-    <%= link_to("Orange", color_path(id: @event.id, color: "orange"))%>
-    <%= link_to("Green", color_path(id: @event.id, color: "green"))%>
-   </article>
+    <aside class= "color_choice">
+        <%= link_to("Index", events_path) %>
+        <%= link_to image_tag("red_light.jpg", size: "100x100"), color_path(id: @event.id, color: "red")%>
+        <%= link_to image_tag("orange_light.jpg", size: "100x100"), color_path(id: @event.id, color: "orange")%>
+        <%= link_to image_tag("green_light.jpg", size: "100x100"), color_path(id: @event.id, color: "green")%>
+    </aside>
+    </article>
 </div>	

@@ -23,7 +23,6 @@ class UsersController < ApplicationController
     unless @user
 	    @user = User.new(name: params[:user][:name], description: params[:user][:description],
 	    privacy: params[:user][:privacy], email: params[:user][:email], password: params[:user][:password])
-	    @connector = Connector.new(color: params[:connector][:color])
 	    if @user.save
 	    	redirect_to users_path
 	    else
@@ -34,12 +33,12 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find params[:id]
-		@connector = Connector.new(color: params[:color])
+		# @connector = Connector.new(color: params[:color])
 	end
 
 	def update
 		@user = User.find params[:id]
-		@connector = Connector.new(color: params[:color])
+		# @connector = Connector.new(color: params[:color])
 
 		if @user.update_attributes user_params
 	      redirect_to action: :show, controller: 'users', user_id: @user.id
