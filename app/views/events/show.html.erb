@@ -7,10 +7,12 @@
     <h3><%= @event.starting_time.strftime(" Start: %H:%M") %></h3>
     <h3><%= @event.finishing_time.strftime(" Finish: %H:%M") %></h3>
     <aside class= "color_choice">
-        <%= link_to("Index", events_path) %>
-        <%= link_to image_tag("red_light.jpg", size: "100x100"), color_path(id: @event.id, color: "red")%>
-        <%= link_to image_tag("orange_light.jpg", size: "100x100"), color_path(id: @event.id, color: "orange")%>
-        <%= link_to image_tag("green_light.jpg", size: "100x100"), color_path(id: @event.id, color: "green")%>
+        <ul>
+          <li><%= link_to image_tag("red_light.jpg", size: "100x70"), color_path(id: @event.id, color: "red")%></li>
+          <li><%= link_to image_tag("orange_light.jpg", size: "100x120"), color_path(id: @event.id, color: "orange")%></li>
+          <li> <%= link_to image_tag("green_light.jpg", size: "100x105", class: "green_light"), color_path(id: @event.id, color: "green")%></li>
+          <li><%= link_to("Back to events", events_path) %></li>
+        </ul>
     </aside>
     </article>
 </div>	
