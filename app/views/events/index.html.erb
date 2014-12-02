@@ -11,10 +11,17 @@
 				<%  else %>
 	       		<%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
 	       <% end %>
-	       <%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
-	       <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
-	       <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
-	       <%= @all_connectors.where(event_id: u.id).count %>
+	       <div class = "count_green Gauge">
+	       	<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
+	       </div>
+	       <div class = "count_orange Gauge">
+	       	<%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
+	       </div>
+	       <div class = "count_red Gauge">
+	       	<%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
+	       <div class = "count_all Gauge">
+	       	<%= @all_connectors.where(event_id: u.id).count %>
+	       </div>
       </li>
     <% end %>
   </ul>

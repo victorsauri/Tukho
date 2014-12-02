@@ -216,4 +216,20 @@ input[type="submit"] {
 
 .green_light {
 	margin-top: -10px;
+	border-radius: 60px;
+	opacity: 0.8;
+}
+.orange_light {
+	margin-top: -10px;
+	border-radius: 60px;
+	opacity: 0.8;
+}
+.red_light {
+	margin-top: -10px;
+	border-radius: 60px;
+	opacity: 0.8;
+}
+
+img:hover {
+	opacity:1;
 }

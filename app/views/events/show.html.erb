@@ -8,8 +8,8 @@
     <h3><%= @event.finishing_time.strftime(" Finish: %H:%M") %></h3>
     <aside class= "color_choice">
         <ul>
-          <li><%= link_to image_tag("red_light.jpg", size: "100x70"), color_path( id: @event.id, color: "red", :connector => {event_id: @event.id, color: "red"} ) , method: :put %></li>
-          <li><%= link_to image_tag("orange_light.jpg", size: "100x120"), color_path(id: @event.id, color: "orange", :connector => {event_id: @event.id, color: "orange"} ), method: :put %></li>
+          <li><%= link_to image_tag("red_light.jpg", size: "100x70", class: "red_light"), color_path( id: @event.id, color: "red", :connector => {event_id: @event.id, color: "red"} ) , method: :put %></li>
+          <li><%= link_to image_tag("orange_light.jpg", size: "100x120", class: "orange_light"), color_path(id: @event.id, color: "orange", :connector => {event_id: @event.id, color: "orange"} ), method: :put %></li>
           <li> <%= link_to image_tag("green_light.jpg", size: "100x105", class: "green_light"), color_path(id: @event.id, color: "green", :connector => {event_id: @event.id, color: "green"} ), method: :put %></li>
           <li><%= link_to("Back to events", events_path) %></li>
         </ul>
