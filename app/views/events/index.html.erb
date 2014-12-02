@@ -1,11 +1,22 @@
 <div class="background">
 	<div class = "container">
 	</br>
-		<ul>
-	     <% @event.each do |u| %>
-	       <li class="list-group-item list-group-item-danger list_event"><%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> - <%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
-	       	</li>
-	     <% end %>
-	  </ul>
-	 </div>
+	<ul>
+    <% @events.each do |u| %>
+      <li class="list-group-item list-group-item-danger list_event">
+      	<%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> - 
+				<% if @connectors.pluck(:event_id).include? u.id %>
+					<a href="">Joined</a>
+					<%= link_to "Edit yout color", event_path(u.id), class: 'btn btn-success join' %>
+				<%  else %>
+	       		<%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
+	       <% end %>
+	       <%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
+	       <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
+	       <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
+	       <%= @all_connectors.where(event_id: u.id).count %>
+      </li>
+    <% end %>
+  </ul>
+	</div>
 </div>

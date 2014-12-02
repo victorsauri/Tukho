@@ -5,17 +5,25 @@ class EventsController < ApplicationController
 	
 
 	def index
-		@event = Event.order(created_at: :desc).limit(8)
+		@events = Event.order(created_at: :desc).limit(8)
+		@connectors =  current_user.connectors
+		@all_connectors = Connector.all
 	end
 	def show
 	 	@event = Event.find params[:id]
 	 	if current_user
-	 		current_user.events << @event
+	 		# current_user.events << @event
+	 		connector = Connector.new user_id: current_user.id, event_id: @event.id
+	 		if connector.save
+	 			puts 'saved'
+	 		else
+	 			puts 'la has liao'
+	 		end
 	 	end
 	end
 	def choose_color
-	 	@connector = current_user.connectors.where(event_id:params[:id]).first
-		@connector.update_attributes color: params[:color]
+	 	@connector = Connector.find_by(user_id: current_user.id, event_id:params[:id])
+		@connector.update_attributes connector_params
 		redirect_to :events
 	end
 
