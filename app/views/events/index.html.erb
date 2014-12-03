@@ -1,28 +1,46 @@
 <div class="background">
 	<div class = "container">
 	</br>
-	<ul>
-    <% @events.each do |u| %>
-      <li class="list-group-item list-group-item-danger list_event">
-      	<%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> - 
-				<% if @connectors.pluck(:event_id).include? u.id %>
-					<a href="">Joined</a>
-					<%= link_to "Edit yout color", event_path(u.id), class: 'btn btn-success join' %>
-				<% else %>
-	       		<%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
-	      <% end %>
-	     	<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
-	      <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
-	      <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
-	       <div id = 'count_all'>
-	       	<%= @all_connectors.where(event_id: u.id).count %>
-	       </div>
-	       <div>
-		       <canvas id='Gauge'>
-		       </canvas>
-	       </div>
-      </li>
-    <% end %>
-  </ul>
+		<ul>
+	    <% @events.each do |u| %>
+	      <li class="list-group-item list-group-item-danger list_event">
+	      	<%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> - 
+					<% if @connectors.pluck(:event_id).include? u.id %>
+						<a href="">Joined</a>
+						<%= link_to "Edit yout color", event_path(u.id), class: 'btn btn-success join' %>
+					<% else %>
+		       		<%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
+		      <% end %>
+		     	<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
+		      <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
+		      <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
+		      <span id = 'count_all'>
+		      	<%= @all_connectors.where(event_id: u.id).count %>
+		      </span>
+		      <canvas id="Gauge" width="125" height="82" style="width: 80px; height: 50px;"></canvas>
+	      </li>
+	    <% end %> 
+	  </ul>
 	</div>
+  <script type="text/javascript">
+    var opts = {
+      lines: 12,
+      angle: 0.15,
+      lineWidth: 0.44,
+      pointer: {
+        length: 0.9,
+        strokeWidth: 0.035,
+        color: '#000000'
+      },
+      limitMax: 'false',
+      percentColors: [[0.0, "#a9d70b" ],[0.49999, "#a9d70b" ],[0.50, "#f9c802"],[0.79999, "#f9c802"],[0.825, "#ff0000"], [1.0, "#ff0000"]],
+      strokeColor: '#E0E0E0',
+      generateGradient: true
+    };
+    var target = document.getElementById('Gauge');
+    var gauge = new Gauge(target).setOptions(opts);
+    gauge.maxValue = 100;
+    gauge.animationSpeed = 32;
+    gauge.set(50);
+	</script>
 </div>
