@@ -5,9 +5,11 @@ class EventsController < ApplicationController
 	
 
 	def index
+		@counter = 0
 		@events = Event.order(created_at: :desc).limit(8)
 		@connectors =  current_user.connectors
 		@all_connectors = Connector.all
+		@total_sum = @all_connectors
 	end
 	def show
 	 	@event = Event.find params[:id]

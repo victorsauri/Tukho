@@ -11,11 +11,17 @@
 					<% else %>
 		       		<%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
 		      <% end %>
-		     	<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
-		      <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
-		      <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
+		      <span id = 'green_count'>
+		     		<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
+		     	</span>
+		     	<span id = 'orange_count'>
+		     	 <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
+		      </span>
+		      <span id = 'red_count'>
+		     	 <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
+		      </span>
 		      <span id = 'count_all'>
-		      	<%= @all_connectors.where(event_id: u.id).count %>
+		      	<%= @total_sum.where(event_id: u.id).count %>
 		      </span>
 		      <canvas id="Gauge" width="125" height="82" style="width: 80px; height: 50px;"></canvas>
 	      </li>
@@ -23,6 +29,10 @@
 	  </ul>
 	</div>
   <script type="text/javascript">
+  	var total = document.getElementById('count_all').innerHTML;
+  	var red = document.getElementById('red_count').innerHTML;
+  	var green = document.getElementById('green_count').innerHTML;
+  	var orange = document.getElementById('orange_count').innerHTML;
     var opts = {
       lines: 12,
       angle: 0.15,
@@ -33,14 +43,15 @@
         color: '#000000'
       },
       limitMax: 'false',
-      percentColors: [[0.0, "#a9d70b" ],[0.49999, "#a9d70b" ],[0.50, "#f9c802"],[0.79999, "#f9c802"],[0.825, "#ff0000"], [1.0, "#ff0000"]],
+      percentColors: [[0,'#AA3939'],[red,'#AA3939'],[orange, '#FF821F'], [total, '#097B09'], [100,'#097B09'],],
       strokeColor: '#E0E0E0',
       generateGradient: true
     };
     var target = document.getElementById('Gauge');
     var gauge = new Gauge(target).setOptions(opts);
-    gauge.maxValue = 100;
-    gauge.animationSpeed = 32;
-    gauge.set(50);
+    console.log(red);
+    gauge.maxValue = document.getElementById('count_all').innerHTML;
+    gauge.animationSpeed = 12;
+    gauge.set(green);
 	</script>
 </div>
