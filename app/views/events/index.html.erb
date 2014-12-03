@@ -8,16 +8,18 @@
 				<% if @connectors.pluck(:event_id).include? u.id %>
 					<a href="">Joined</a>
 					<%= link_to "Edit yout color", event_path(u.id), class: 'btn btn-success join' %>
-				<%  else %>
+				<% else %>
 	       		<%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
 	      <% end %>
 	     	<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
 	      <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
 	      <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
-	       <div class = "count_all">
+	       <div id = 'count_all'>
 	       	<%= @all_connectors.where(event_id: u.id).count %>
 	       </div>
-	       <div class = "Gauge">
+	       <div>
+		       <canvas id='Gauge'>
+		       </canvas>
 	       </div>
       </li>
     <% end %>
