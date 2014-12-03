@@ -29,10 +29,10 @@
 	  </ul>
 	</div>
   <script type="text/javascript">
-  	var total = document.getElementById('count_all').innerHTML;
-  	var red = document.getElementById('red_count').innerHTML;
-  	var green = document.getElementById('green_count').innerHTML;
-  	var orange = document.getElementById('orange_count').innerHTML;
+  	var total = parseFloat(document.getElementById('count_all').innerHTML);
+  	var red = parseFloat(document.getElementById('red_count').innerHTML);
+  	var green = parseFloat(document.getElementById('green_count').innerHTML);
+  	var orange = parseFloat(document.getElementById('orange_count').innerHTML);
     var opts = {
       lines: 12,
       angle: 0.15,
@@ -40,18 +40,18 @@
       pointer: {
         length: 0.9,
         strokeWidth: 0.035,
-        color: '#000000'
+        color: 'gold'
       },
       limitMax: 'false',
-      percentColors: [[0,'#AA3939'],[red,'#AA3939'],[orange, '#FF821F'], [total, '#097B09'], [100,'#097B09'],],
-      strokeColor: '#E0E0E0',
+      percentColors: [[0.0,'#9A130C'],[red/total,'#9A130C'],[(red+orange)/total, '#f9c802'], [(total-orange)/total,'#097B09'],[1.0,'#097B09']],
+      strokeColor: [[0.0,'#9A130C'],[red/total,'#9A130C'],[(red+orange)/total, '#f9c802'], [(total-orange)/total,'#097B09'],[1.0,'#097B09']],
       generateGradient: true
     };
     var target = document.getElementById('Gauge');
     var gauge = new Gauge(target).setOptions(opts);
     console.log(red);
     gauge.maxValue = document.getElementById('count_all').innerHTML;
-    gauge.animationSpeed = 12;
-    gauge.set(green);
+    gauge.animationSpeed = 72;
+    gauge.set(total-(red));
 	</script>
 </div>
