@@ -233,3 +233,44 @@ input[type="submit"] {
 img:hover {
 	opacity:1;
 }
+
+#tri_color{
+	float: right;
+	width: 150px;
+	margin-top: -71px;
+}
+
+#tech-slideshow {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    width: 655px;
+}
+#tech-slideshow > div {
+		margin-top: 10px;
+    height: 200px;
+    width: 2526px;
+    background: url(hue3.png);
+    height: 70%;
+		background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    -moz-transition:  opacity 0.5s ease-out; 
+       -o-transition: opacity 0.5s ease-out; 
+  -webkit-transition: opacity 0.5s ease-out; 
+      -ms-transition: opacity 0.5s ease-out; 
+
+    -webkit-animation: moveSlideshow 60s linear infinite;
+    -moz-animation:    moveSlideshow 60s linear infinite;
+}
+
+@-webkit-keyframes moveSlideshow {
+    0% { left: 0; }
+    100% { left: -1684px; }
+}
+@-moz-keyframes moveSlideshow {
+    0% { left: 0; }
+    100% { left: -1684px; }
+}
