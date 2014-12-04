@@ -3,7 +3,7 @@
 	</br>
 		<ul>
 	     <% @users.each do |u| %>
-	       <li class="list-group-item list-group-item-danger"><%= u.name %> - <%= u.description %>
+	       <li class="list-group-item list-group-item-danger all_tukhos"><%= u.name %> - <%= u.description %>
 	       <%= link_to("Update", edit_user_path(u.id)) %> -
 			   <%= link_to("Remove", user_path(u.id), method: :delete, data: { confirm: 'Are you sure?'}) %></li>
 	     <% end %>

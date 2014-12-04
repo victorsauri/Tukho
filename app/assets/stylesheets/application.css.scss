@@ -16,7 +16,8 @@
  */
 
 .background {
-	 background-image: url("https://dl-web.dropbox.com/get/Public/Manchester_City_Centre.jpg?_subject_uid=89344857&w=AADjstSbqfjZOnha09YbQuKlaTIqnqyXdhp2DkckLxSmPA")no-repeat center center fixed; 
+	background-image: url("https://dl-web.dropbox.com/get/Public/Manchester_City_Centre.jpg?_subject_uid=89344857&w=AADjstSbqfjZOnha09YbQuKlaTIqnqyXdhp2DkckLxSmPA")no-repeat center center fixed; 
+	// background-position: 0px 0px, center;
 }
 
 @import "bootstrap-sprockets";
@@ -134,7 +135,7 @@ a:hover , {
 
 body {
 	color: #587058;
-	background: url(traffic-light.jpg) no-repeat -120px;
+	background: url(traffic-light.jpg) no-repeat -300px;
 }
 
 .list-group-item-danger {
@@ -145,6 +146,11 @@ body {
 	margin-top: 8px;
 	border-radius: 5px;
 }
+.li a:active {
+	text-decoration:none;
+	color: #A21F1F;
+}
+
 
 .list-group-item-danger a {
 	font-size: 17px;
@@ -153,11 +159,17 @@ body {
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
 	color: white;
 	background-color: #587058;
+	text-decoration:none;
 }
 
 .nav-tabs a, .nav-pills a, .breadcrumb a, .pager a {
 	color: #587058;
 }
+
+// .list-group-item .list-group-item-danger> a:active {
+// 	text-decoration:none;
+// 	color: #A21F1F;
+// }
 
 .col-lg-6 {
 	width: 575px;
@@ -210,9 +222,11 @@ input[type="submit"] {
 }
 
 .join {
-	height: 21px;
+	height: 25px;
 	padding-top: 0px;
-	margin-left: 5px;
+	display: inline;
+	width: 137px;
+	margin-top: 5px;
 }
 
 .color_choice {
@@ -297,6 +311,7 @@ img:hover {
 	float: right;
 	top: -75px;
 	position: relative;
+	right: 10px;
 }
 
 .navbar-collapse {
@@ -318,3 +333,23 @@ img:hover {
 
 	text-decoration: none;
 }
+.all_tukhos {
+	width:570px;
+}
+
+#orange_count, #green_count, #red_count,{
+	color:transparent;
+}
+
+#count_all {
+	margin-left: 10px;
+}
+
+
+// @media (min-width: 768px) and (max-width: 1099px) {
+
+// // .background {
+
+// // }
+
+// }
