@@ -72,9 +72,9 @@ html {
 	margin-top: 15px;
 }
 
-.nav {
-	padding-left: 15%;
-}
+// .nav {
+// 	padding-left: 15%;
+// }
 
 h2, h3 {
 	color: rgb(193, 91, 20);
@@ -83,14 +83,14 @@ h2, h3 {
 
 
 .new_form>h2 {
-margin-top: 155px;
-margin-left: 100px;
-color: #DA8245;
+	margin-top: 40px;
+	margin-left: 100px;
+	color: #DA8245;
 }
 
 .edit_form>h2 {
-	margin-top: 155px;
-	color: #DA8245;
+	margin-top: 40px;
+	color: #E4E4E4;
 	margin-right: 100px;
 }
 
@@ -153,17 +153,25 @@ body {
 
 
 .list-group-item-danger a {
-	font-size: 17px;
+	font-size: 15px;
+	padding-top: 3px;
+	background: transparent;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
 	color: white;
 	background-color: #587058;
 	text-decoration:none;
+	padding: 15px 15px;
 }
 
 .nav-tabs a, .nav-pills a, .breadcrumb a, .pager a {
 	color: #587058;
+	font-size:16px;
+}
+
+.nav > li > a {
+	padding: 15px 15px;
 }
 
 // .list-group-item .list-group-item-danger> a:active {
@@ -197,7 +205,7 @@ label {
 input[type="submit"] {
 	-webkit-appearance: button;
 	cursor: cell;
-	width: 150px;
+	width: 100px;
 	margin-top: 20px;
 	color: rgb(76, 56, 56);
 	box-shadow: inset 0 0 1em gold, 0 0 1em orange;
@@ -272,7 +280,7 @@ img:hover {
     width: 655px;
 }
 #tech-slideshow > div {
-		margin-top: 10px;
+		margin-top: 50px;
     height: 200px;
     width: 2526px;
     background: url(hue3.png);
@@ -317,6 +325,7 @@ img:hover {
 .navbar-collapse {
 	padding-top: 2px;
 	padding-right: 5px;
+	height:50px;
 }
 
 .navbar-collapse a {
@@ -336,15 +345,54 @@ img:hover {
 .all_tukhos {
 	width:570px;
 }
+ #green_count{
+	color:lightgreen;
+ }
 
-#orange_count, #green_count, #red_count,{
-	color:transparent;
+#red_count{
+	color: #CA0B0B;
+}
+
+#orange_count, {
+	color:#D0941F;
 }
 
 #count_all {
 	margin-left: 10px;
 }
 
+#user_email.form-control, #user_password.form-control {
+	width:130px;
+	background:transparent;
+}
+
+#log_in{
+	padding:0px;
+	margin-top: -20px;
+	margin-left:10px;
+	width:25px;
+}
+.navbar-collapse.navbar-form.navbar-left{
+	padding:0px;
+	margin: 0px;
+}
+
+.navbar-collapse.navbar-form.navbar-left.user_links{
+	padding-top: 15px;
+	padding-right:10px;
+
+}
+
+#profile_links>a{
+	color:#D1BFBF;
+}
+#profile_links>a:hover{
+	color:#c15b14;
+}
+
+#joined a{
+	height:10px;
+}
 
 // @media (min-width: 768px) and (max-width: 1099px) {
 

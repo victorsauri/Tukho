@@ -7,7 +7,7 @@
 	      	<div class="text_li">
 	      		<%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> 
 						<% if @connectors.pluck(:event_id).include? u.id %>
-							<a href="">Joined</a>
+							<a id="joined" href="">Joined</a>
 								<%= link_to "Edit yout color", event_path(u.id), class: 'btn btn-success join' %>
 						<% else %>
 		       		<%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
@@ -17,13 +17,13 @@
 			      </span>Tukhos
 			      <span id = 'green_count'>
 			     		<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
-			     	</span>
+			     	</span>Greens
 			     	<span id = 'orange_count'>
 			     	 <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
-			      </span>
+			      </span>Oranges
 			      <span  id = 'red_count'>
 			     	 <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
-			      </span>
+			      </span>Reds
 			     </div>
 		      <canvas id="Gauge" width="125" height="82" style="width: 100px; height: 71px;"></canvas>
 	      </li>
