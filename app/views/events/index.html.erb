@@ -4,25 +4,27 @@
 		<ul>
 	    <% @events.each do |u| %>
 	      <li class="list-group-item list-group-item-danger list_event">
-	      	<%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> - 
-					<% if @connectors.pluck(:event_id).include? u.id %>
-						<a href="">Joined</a>
-						<%= link_to "Edit yout color", event_path(u.id), class: 'btn btn-success join' %>
-					<% else %>
+	      	<div class="text_li">
+	      		<%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> -  
+						<% if @connectors.pluck(:event_id).include? u.id %>
+							<a href="">Joined</a>
+								<%= link_to "Edit yout color", event_path(u.id), class: 'btn btn-success join' %>
+						<% else %>
 		       		<%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
-		      <% end %>
-		      <span id = 'green_count'>
-		     		<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
-		     	</span>
-		     	<span id = 'orange_count'>
-		     	 <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
-		      </span>
-		      <span id = 'red_count'>
-		     	 <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
-		      </span>
-		      <span id = 'count_all'>
-		      	<%= @total_sum.where(event_id: u.id).count %>
-		      </span>
+		      	<% end %>
+			      <span id = 'green_count'>
+			     		<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
+			     	</span>
+			     	<span id = 'orange_count'>
+			     	 <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
+			      </span>
+			      <span id = 'red_count'>
+			     	 <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
+			      </span>
+			      <span id = 'count_all'>
+			      	<%= @total_sum.where(event_id: u.id).count %>
+			      </span>
+			     </div>
 		      <canvas id="Gauge" width="125" height="82" style="width: 80px; height: 50px;"></canvas>
 	      </li>
 	    <% end %> 
@@ -43,8 +45,8 @@
         color: 'gold'
       },
       limitMax: 'false',
-      percentColors: [[0.0,'#9A130C'],[red/total,'#9A130C'],[(red+orange)/total, '#f9c802'], [(total-orange)/total,'#097B09'],[1.0,'#097B09']],
-      strokeColor: [[0.0,'#9A130C'],[red/total,'#9A130C'],[(red+orange)/total, '#f9c802'], [(total-orange)/total,'#097B09'],[1.0,'#097B09']],
+      colorStart: '#097B09',
+      strokeColor: '#9A130C',
       generateGradient: true
     };
     var target = document.getElementById('Gauge');
@@ -52,6 +54,13 @@
     console.log(red);
     gauge.maxValue = document.getElementById('count_all').innerHTML;
     gauge.animationSpeed = 72;
-    gauge.set(total-(red));
+    gauge.set(green);
 	</script>
 </div>
+
+
+<!-- percentColors: [[0.0,'#9A130C'],[red/total,'#9A130C'],[(red+orange)/total, '#f9c802'], [(total-orange)/total,'#097B09'],[1.0,'#097B09']] -->
+
+<!-- strokeColor: [[0.0,'#9A130C'],[red/total,'#9A130C'],[(red+orange)/total, '#f9c802'], [(total-orange)/total,'#9A130C'],[1.0,'#097B09']], -->
+
+<!-- <div id="preview-textfield" style="font-size: 41px;">1,250</div> -->

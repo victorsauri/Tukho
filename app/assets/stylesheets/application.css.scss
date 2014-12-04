@@ -46,7 +46,8 @@ a {
 }
 
 html {
-	font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+	font-family: Baskerville,"Baskerville Old Face","Hoefler Text",Garamond,"Times New Roman",serif
+	// font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
 }
 
 .jumbotron {
@@ -56,10 +57,13 @@ html {
 }
 
 .jumbotron h1, .jumbotron .h1 {
-	font-size: 50px;
+	font-size: 52px;
+	font-family: serif;
 }
+
 .jumbotron h2 {
 	margin-top:35px;
+	font-family: serif;
 }
 
 .nav {
@@ -68,6 +72,7 @@ html {
 
 h2, h3 {
 	color: rgb(193, 91, 20);
+	font-family: serif;
 }
 
 
@@ -87,6 +92,7 @@ color: #DA8245;
 	line-height: 40px;
 	font-size: 20px;
 	padding-top: 20px;
+	text-align: justify;
 }
 
 a {
@@ -273,4 +279,17 @@ img:hover {
 @-moz-keyframes moveSlideshow {
     0% { left: 0; }
     100% { left: -1684px; }
+}
+
+.text_li {
+	display: block;
+	width: 543px;
+	height: 66px;
+	text-align: justify;
+}
+
+#Gauge {
+	float: right;
+	top: -75px;
+	position: relative;
 }
