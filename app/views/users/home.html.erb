@@ -2,9 +2,30 @@
 <div class="jumbotron fill">
 	<div class = "container fill">
 		<h1>Welcome to Tukho</h1>
-		<img class= "traffic" src="icon_traffic.png">
+		<canvas id="tri_color"></canvas>
 		<p><em>CEO Víctor Sauri - Program Generation </em></p>
 		<h2>How can I be helped by Tukho?</h2>
 		<h3>A funny new perspective to improve social interactions through a visual tool. At first glance you can preview how many people will be attending an event. And more importantly their mood energy and predisposition to meet somebody. Feeling before hand a pleasant atmosphere.</h3>
 		</div>
 </div>
+<script type="text/javascript">
+	var canvas = document.getElementById('tri_color');
+	var ctx = canvas.getContext('2d');
+
+	ctx.globalCompositeOperation = 'multiply';
+	ctx.fillStyle = 'red';
+	ctx.beginPath();
+	ctx.arc(40, 50, 35, 0, Math.PI*2, true); 
+	ctx.closePath();
+	ctx.fill();
+	ctx.fillStyle = 'orange';
+	ctx.beginPath();
+	ctx.arc(110, 50, 35, 0, Math.PI*2, true); 
+	ctx.closePath();
+	ctx.fill();
+	ctx.fillStyle = '#24A324';
+	ctx.beginPath();
+	ctx.arc(75, 110, 35, 0, Math.PI*2, true); 
+	ctx.closePath();
+	ctx.fill();
+</script>
