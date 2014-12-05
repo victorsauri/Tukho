@@ -249,18 +249,17 @@ input[type="submit"] {
 
 .green_light {
 	margin-top: -10px;
-	border-radius: 60px;
 	opacity: 0.8;
+	border-radius: 0 0 10px 10px;
 }
 .orange_light {
 	margin-top: -10px;
-	border-radius: 60px;
 	opacity: 0.8;
 }
 .red_light {
 	margin-top: -10px;
-	border-radius: 60px;
 	opacity: 0.8;
+	border-radius: 10px 10px 0 0;
 }
 
 img:hover {

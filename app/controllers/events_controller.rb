@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 	helper_method :event_params
 	helper_method :connector_params
 	helper_method :current_user
-	
+
 
 	def index
 		@events = Event.order(created_at: :desc).limit(8)
