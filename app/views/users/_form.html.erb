@@ -1,32 +1,41 @@
 <div class = "container">
 	<div class = "row">
-		 <div class="col-lg-6">
+		<div class="col-lg-6">
 			<%= form_for [@user] do |f| %>
 				<p class="input-group-lg">
 					<span class="input-group-addon">
-						<%= f.text_field :name, :autofocus => true, :autocomplete => :off, :placeholder => "Add your name"%><p/></span>
+						<%= f.text_field :name, :autofocus => true, :autocomplete => :off, :placeholder => "Add your name"%>
+					</span>
+				<p/>
 				<p class="input-group-lg">
 					<span class="input-group-addon">
-						<%= f.text_field :description, :autocomplete => :off, :autofocus => true, :placeholder => "Write your quote" %><p/></span>
+						<%= f.text_field :description, :autocomplete => :off, :autofocus => true, :placeholder => "Write your quote" %>
+					</span>
+				<p/>
 				<p class="input-group-lg">
 					<span class="input-group-addon">
-						<%= f.text_field :email, :autocomplete => :off, :autofocus => true, :placeholder => "Include your email" %><p/></span>
+						<%= f.text_field :email, :autocomplete => :off, :autofocus => true, :placeholder => "Include your email" %>
+					</span>
+				<p/>
 				<p class="input-group-lg">
 					<span class="input-group-addon">
-						<%= f.text_field :password, :autocomplete => :off, :autofocus => true, :placeholder => "Set your password" %><p/></span>
+						<%= f.text_field :password, :autocomplete => :off, :autofocus => true, :placeholder => "Set your password" %>
+					</span>
+				<p/>
 				<p class="input-group-lg">
 					<%= f.label "Set your privacy" %><br/>
 					<span class="input-group-addon">
-					<%= f.radio_button :privacy, 'true' %> Private
-					<%= f.radio_button :privacy, 'false' %> Public
-					</span><p/>
+						<%= f.radio_button :privacy, 'true' %> Private
+						<%= f.radio_button :privacy, 'false' %> Public
+					</span>
+				<p/>
 		 		<%= f.submit 'Submit', class: 'btn btn-warning' %>
 			<% end %>
 		</div>
 	</div>
 	<span class="errors">
 		<% if @user.errors.any? %>
-		<h3>This is your list of errors</h3>
+			<h3>This is your list of errors</h3>
 			<ul>
 				<% @user.errors.full_messages.each do |error_msg| %>
 					<li><%= error_msg %></li>

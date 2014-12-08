@@ -1,16 +1,16 @@
 <div class = "container">
-  <article>
-    <h1>User's Profile</h1>
-    <h3>Your photo: <%= @user.photo %></h3>
-    <h3>Your name: <%= @user.name %></h3>
-    <h3>Your quote: <%= @user.description %></h3>
-    <h3>Your email: <%= @user.email %></h3>
-    <span id="profile_links">
-        <%= link_to("Go Back", users_path) %>
-        <%= link_to("Remove", user_path, method: :delete, data: { confirm: 'Are you sure?'}) %>
-    </span>
-    <div id="tech-slideshow">
-    	<div id="tech-slideshow-1"></div>
-		</div>
-  </article>
+    <article>
+        <h1>User's Profile</h1>
+        <h3>Your photo: <%= @user.photo %></h3>
+        <h3>Your name: <%= @user.name %></h3>
+        <h3>Your quote: <%= @user.description %></h3>
+        <h3>Your email: <%= @user.email %></h3>
+        <span id="profile_links">
+            <%= link_to("Go Back", users_path) %>
+            <%= link_to("Remove", user_path, method: :delete, data: { confirm: 'Are you sure?'}) %>
+        </span>
+        <div id="tech-slideshow">
+        	<div id="tech-slideshow-1"></div>
+    	</div>
+    </article>
 </div>
