@@ -2,27 +2,27 @@
 	<div class = "container">
 	</br>
 		<ul>
-	    <% @events.each do |u| %>
+	    <% @events.each do |event| %>
 	      	<li class="list-group-item list-group-item-danger list_event">
 		      	<div class="text_li">
-		      		<%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> 
-					<% if @connectors.pluck(:event_id).include? u.id %>
+		      		<%= event.name %> - <%= event.description %> - <%= event.date.strftime("#{event.date.day.ordinalize} %B %Y") %> - <%= event.location %> - <%= event.starting_time.strftime(" Start: %H:%M")%> - <%= event.finishing_time.strftime(" Finish: %H:%M") %> 
+					<% if @connectors.pluck(:event_id).include? event.id %>
 						<a id="joined" href="">Joined</a>
-						<%= link_to "Edit yout color", event_path(u.id), class: 'btn btn-success join' %>
+						<%= link_to "Edit yout color", event_path(event.id), class: 'btn btn-success join' %>
 					<% else %>
-			       		<%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
+			       		<%= link_to "Join this event", event_path(event.id), class: 'btn btn-success join' %>
 			      	<% end %>
 				    <span id = 'count_all'>
-				    	<%= @total_sum.where(event_id: u.id).count %>
+				    	<%= @total_sum.where(event_id: event.id).count %>
 				    </span>Tukhos
 				    <span id = 'green_count'>
-				     	<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
+				     	<%= @all_connectors.where(event_id: event.id).where(color: "green").count %>
 				    </span>Greens
 				    <span id = 'orange_count'>
-				     	<%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
+				     	<%= @all_connectors.where(event_id: event.id).where(color: "orange").count %>
 				    </span>Oranges
 				    <span  id = 'red_count'>
-				     	<%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
+				     	<%= @all_connectors.where(event_id: event.id).where(color: "red").count %>
 				    </span>Reds
 				</div>
 			    <canvas id="Gauge" width="125" height="82" style="width: 100px; height: 71px;"></canvas>
