@@ -2,61 +2,39 @@
 	<div class = "container">
 	</br>
 		<ul>
-	    <% @events.each do |u| %>
-	      <li class="list-group-item list-group-item-danger list_event">
-	      	<div class="text_li">
-	      		<%= u.name %> - <%= u.description %> - <%= u.date.strftime("#{u.date.day.ordinalize} %B %Y") %> - <%= u.location %> - <%= u.starting_time.strftime(" Start: %H:%M")%> - <%= u.finishing_time.strftime(" Finish: %H:%M") %> 
-						<% if @connectors.pluck(:event_id).include? u.id %>
-							<a id="joined" href="">Joined</a>
-								<%= link_to "Edit yout color", event_path(u.id), class: 'btn btn-success join' %>
-						<% else %>
-		       		<%= link_to "Join this event", event_path(u.id), class: 'btn btn-success join' %>
-		      	<% end %>
-			      <span id = 'count_all'>
-			      	<%= @total_sum.where(event_id: u.id).count %>
-			      </span>Tukhos
-			      <span id = 'green_count'>
-			     		<%= @all_connectors.where(event_id: u.id).where(color: "green").count %>
-			     	</span>Greens
-			     	<span id = 'orange_count'>
-			     	 <%= @all_connectors.where(event_id: u.id).where(color: "orange").count %>
-			      </span>Oranges
-			      <span  id = 'red_count'>
-			     	 <%= @all_connectors.where(event_id: u.id).where(color: "red").count %>
-			      </span>Reds
-			     </div>
-		      <canvas id="Gauge" width="125" height="82" style="width: 100px; height: 71px;"></canvas>
-	      </li>
-	    <% end %> 
-	  </ul>
+	    <% @events.each do |event| %>
+	      	<li class="list-group-item list-group-item-danger list_event">
+		      	<div class="text_li">
+		      		<%= event.name %> - <%= event.description %> - <%= event.date.strftime("#{event.date.day.ordinalize} %B %Y") %> - <%= event.location %> - <%= event.starting_time.strftime(" Start: %H:%M")%> - <%= event.finishing_time.strftime(" Finish: %H:%M") %> 
+					<% if @connectors.pluck(:event_id).include? event.id %>
+						<a id="joined" href="">Joined</a>
+						<%= link_to "Edit yout color", event_path(event.id), class: 'btn btn-success join' %>
+					<% else %>
+			       		<%= link_to "Join this event", event_path(event.id), class: 'btn btn-success join' %>
+			      	<% end %>
+				    <span class='count_all'>
+				    	<%= @total_sum.where(event_id: event.id).count %>
+				    </span>Tukhos
+				    <span class='green_count'>
+				     	<%= @all_connectors.where(event_id: event.id).where(color: "green").count %>
+				    </span>Greens
+				    <span class='orange_count'>
+				     	<%= @all_connectors.where(event_id: event.id).where(color: "orange").count %>
+				    </span>Oranges
+				    <span  class='red_count'>
+				     	<%= @all_connectors.where(event_id: event.id).where(color: "red").count %>
+				    </span>Reds
+				</div>
+			    <canvas id="Gauge" class="Gauge" width="125" height="82" style="width: 100px; height: 71px;"></canvas>
+	        </li>
+	    <% end %>
+		</ul>
 	</div>
-  <script type="text/javascript">
-  	var total = parseFloat(document.getElementById('count_all').innerHTML);
-  	var red = parseFloat(document.getElementById('red_count').innerHTML);
-  	var green = parseFloat(document.getElementById('green_count').innerHTML);
-  	var orange = parseFloat(document.getElementById('orange_count').innerHTML);
-    var opts = {
-      lines: 12,
-      angle: 0.15,
-      lineWidth: 0.44,
-      pointer: {
-        length: 0.9,
-        strokeWidth: 0.035,
-        color: 'gold'
-      },
-      limitMax: 'false',
-      colorStart: '#097B09',
-      strokeColor: '#AC3518',
-      generateGradient: true
-    };    
-    var target = document.getElementById('Gauge');
-    var gauge = new Gauge(target).setOptions(opts);
-    console.log(red);
-    gauge.maxValue = document.getElementById('count_all').innerHTML;
-    gauge.animationSpeed = 72;
-    gauge.set(green);
-	</script>
 </div>
+
+<script>
+	
+</script>
 
 
 <!-- percentColors: [[0.0,'#9A130C'],[red/total,'#9A130C'],[(red+orange)/total, '#f9c802'], [(total-orange)/total,'#097B09'],[1.0,'#097B09']] -->

@@ -7,12 +7,13 @@ color_arr = ['green', 'orange', 'red']
 end
 50.times do
 	require 'faker'
-	User.create(name: Faker::Name.name, description: Faker::Name.title, photo: Faker::Avatar.image, privacy: false, email:Faker::Internet.email, password: "1234" )
-	rand_user = rand(0..User.all.count)
-	rand_event = rand(0..Event.all.count)
-	Connector.create(user_id: rand_user, event_id: rand_event, color: color_arr.sample)
+  User.create(name: Faker::Name.name, description: Faker::Name.title, photo: Faker::Avatar.image, privacy: false, email:Faker::Internet.email, password: "1234" )
+  rand_user = rand(0..User.all.count)
+  rand_event = rand(0..Event.all.count)
+  Connector.create(user_id: rand_user, event_id: rand_event, color: color_arr.sample)
 end
 
+User.create(name: "ben", description: Faker::Name.title, photo: Faker::Avatar.image, privacy: false, email: "ben@gmail.com", password: "1234")
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
